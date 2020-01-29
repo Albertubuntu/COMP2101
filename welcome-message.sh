@@ -15,22 +15,45 @@
 #   Invent your own titles, do not use the ones from this example
 
 ###############
-# Variables   #
+# Variables #
 ###############
-name="$USERNAME"
+name="$USER"
 date=$(date +'%I:%M %p')
 hostname=$(hostname)
-weekday=$(date +%u)
+day=$(date +%A)
 ###############
-# Main        #
+# Main #
 ###############
 cat <<EOF
-Welcome to planet $hostname, $name!
-
-EOF
-if [ "$weekday" = "6" ] || [ "$weekday" = "7" ]
+if [ "$day" = "Monday" ]
 then
-echo "It is $date on Weekend."
+Welcome to Earth $hostname, Optimist $name!
 else
-echo "It is $date on Weekday."
+if [ "$day" = "Tuesday" ]
+then
+Welcome to Earth $hostname, Realist $name!
+else
+if [ "$day" = "Wednesday" ]
+then
+Welcome to Earth $hostname, Pessimist $name!
+else
+if [ "$day" = "Thursday" ]
+then
+Welcome to Earth $hostname, kathi $name!
+else
+if [ "$day" = "Friday" ]
+then
+Welcome to Earth $hostname, personalise $name!
+else
+if [ "$day" = "Saturday" ]
+then
+Welcome to Earth $hostname, Pessionist $name!
+else
+Welcome to Earth $hostname, motivated $name!
 fi
+fi
+fi
+fi
+fi
+EOF
+echo "It is $date on $day ."
