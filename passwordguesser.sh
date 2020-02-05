@@ -9,17 +9,47 @@
 # TASK 3: Improve it by giving them 5 tries to get it right before failing
 #           *** Do not use the exit command, and do not use a loop (e.g. while or for)
 
-myString="TestString"
-referenceString="password"
-
-for try in {1..5}
-do
-  read -p "Try ($try): Enter a password guess:" myString
-  if [ $myString = $referenceString ]
-  then
-    printf "AWESOME!! You Got it!\n"
-    break
+referenceString="myString"
+read -s -p "PLEASE ENTER YOUR PASSWORD:" myString
+echo
+if [ $myString = $referenceString ]; then
+echo "AWESOME!! YOU GOT IT RIGHT.."; echo
+else
+ echo "GIVE A SHOT AGAIN.."
+ read -s -p "PLEASE ENTER YOUR PASSWORD:" myString
+  if [ $myString = $referenceString ]; then
+   echo "AWESOME!! YOU GOT IT RIGHT.."; echo
   else
-    echo "You have enter the incorrect password"...
-  fi
-done
+    echo
+    echo "GIVE A SHOT AGAIN.."
+    read -s -p "PLEASE ENTER YOUR PASSWORD:" myString
+     if [ $myString = $referenceString ]; then
+       echo "AWESOME!! YOU GOT IT RIGHT.."; echo
+     else
+       echo
+       echo "GIVE A SHOT AGAIN.."
+       read -s -p "PLEASE ENTER YOUR PASSWORD:" myString
+        if [ $myString = $referenceString ]; then
+         echo "AWESOME!! YOU GOT IT RIGHT.."; echo
+        else
+          echo
+          echo "GIVE A SHOT AGAIN.."
+          read -s -p "PLEASE ENTER YOUR PASSWORD:" myString
+           if [ $myString = $referenceString ]; then
+            echo "AWESOME!! YOU GOT IT RIGHT.."; echo
+           else
+             echo
+             echo "GIVE A SHOT AGAIN.."
+             read -s -p "PLEASE ENTER YOUR PASSWORD:" myString
+              if [ $myString = $referenceString ]; then
+               echo "AWESOME!! YOU GOT IT RIGHT.."; echo
+              else
+                echo
+                echo "GIVE A SHOT AGAIN.."
+
+	 fi
+ fi
+fi
+fi
+   fi
+fi
