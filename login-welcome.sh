@@ -30,6 +30,14 @@ weekday=$(date +%u)
 ###############
 
 
+if [ "$weekday" = "6" ] || [ "$weekday" = "7" ]
+then
+   echo "It is $NOW on Weekend."
+else
+   echo "It is $day on Weekday."
+fi
+
+
 if [ "$day" = "Monday" ]
 then
   title="Optimistic"
@@ -64,16 +72,8 @@ fi
 fi
 fi
 fi
-
 cat <<EOF
 
 Welcome to planet $hostname, "$title $USER!"
 EOF
-
-
-if [ "$weekday" = "6" ] || [ "$weekday" = "7" ]
-then
-   echo "It is $NOW on Weekend."
-else
-   echo "It is $day on Weekday."
-fi
+cowsay "Welcome to planet $hostname, "$title $USER!""
